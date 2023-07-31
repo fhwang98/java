@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Q047 {
 //돈을 안넣거나, 돈을 모자라게 넣었을 경우 처리
 	public static void main(String[] args) {
-		//TODO 코드개선 필요
+		//TODO 자판기 코드개선
+		
 		/*
 		 * 전체 반복
 		 * 1. 자판기 출력

@@ -58,7 +58,7 @@ public class Q042 {
 
 	private static int totalDay(int year, int month, int day) {
 		
-		//TODO 코드개선 필요
+		//TODO 1년1월1일~오늘 코드개선
 
 		//1년 1월 1일 ~ 2022년 12월 31일까지 일수
 		int sum = 0;

@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class Q088 {
 
 	public static void main(String[] args) {
+		//TODO 금지어 코드 개선
+		
 		//금지어를 마스킹 처리 -> 글자수 맞추기
 		//금지어를 발견한 횟수
 		

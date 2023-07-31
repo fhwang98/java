@@ -391,7 +391,7 @@ public class Ex32_Array {
 		int n = 10; // Stack에 할당
 		
 
-		int[] nums = new int[3]; // new XXX -> Heap에 할당
+		int[] nums = new int[3]; // new xxx -> Heap에 할당
 		//nums -> Stack에 할당 -> int[]의 메모리주소를 갖고있음
 		//참조형 -> 변수 안의 주소를 참조해 값에 접근!
 		nums[0] = 100;
