@@ -2,7 +2,7 @@ package com.test.java.obj;
 
 //1파일 == 1클래스
 //- 찾기 쉽다.
-public class Student {
+public class Student2 {
 
 	public String name;
 	public int age;

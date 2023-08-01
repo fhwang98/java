@@ -1,5 +1,7 @@
 package com.test.question;
 
+import java.util.Scanner;
+
 public class Q085 {
 
 	public static void main(String[] args) {
@@ -31,5 +33,103 @@ public class Q085 {
 			11 - 1 = 10 > 0
 			   
 		*/
+		
+		Scanner scan = new Scanner(System.in);
+		
+		
+		System.out.print("주민등록번호: ");
+		String jumin = scan.nextLine();
+		
+		jumin = jumin.replace("-", "");
+		
+		if (validCheck(jumin)) {
+			System.out.println("올바른 주민등록번호입니다.");
+		} else {
+			System.out.println("올바르지 않은 주민등록번호입니다.");
+		}
+		
+	}
+
+	private static boolean validCheck(String jumin) {
+
+
+		// 전부 숫자인지
+		
+		if (!isNum(jumin)) {
+			return false;
+		}
+		
+		// 월 > 01 ~ 12
+		if (!isMonth(jumin.substring(2, 4))) {
+			return false;
+		}
+		// 일 > 01 ~ 31 > 월, 윤년에 따라 ..
+		if (!isDate(jumin.substring(0, 2), jumin.substring(2, 4), jumin.substring(4, 6))) {
+			return false;
+		}
+		
+		// 마지막 숫자 검증
+		
+		
+		
+		return false;
+	}
+
+	//q42 참고
+	private static boolean isDate(String yy, String mm, String dd) {
+		
+		int year = Integer.parseInt(yy);
+		int month = Integer.parseInt(mm);
+		int date = Integer.parseInt(dd);
+		
+		if (date == 0) {
+			return false;
+		}
+		
+		if ((month == 1 || month == 3 || month == 5 || month == 7 
+			|| month == 8 || month == 10 || month == 12)) {
+			
+			if (date > 31) {
+				return false;
+			}
+		} else if (month == 4 || month == 5 || month == 6 || month == 7) {
+			if (date > 30) {
+				return false;
+			}
+		} else {
+			if (isLeapYear(year)) {
+				if (date > 29) {
+					return false;
+				}
+			} else {
+				if (date > 28) {
+					return false;
+				}
+				
+			}
+		}
+		return true;
+	}
+
+	private static boolean isLeapYear(int year) {
+		return (year % 400 == 0 ||(year % 4 == 0 && year % 100 != 0)) ? true : false;
+	}
+
+	private static boolean isMonth(String month) {
+
+		if (Integer.parseInt(month) < 0 || Integer.parseInt(month) > 12) {
+			return false;
+		}
+		return true;
+	}
+
+	private static boolean isNum(String jumin) {
+
+		for (int i = 0; i <jumin.length(); i++) {
+			if (jumin.charAt(i) < '0' || jumin.charAt(i) > '9') {
+				return false;
+			}
+		}
+		return true;
 	}
 }

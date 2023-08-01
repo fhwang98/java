@@ -18,21 +18,19 @@ class Book {
 	public void setTitle(String title) {
 		if (title.length() > 0
 			&& title.length() <= 50
-			&& isValideTitle(title)) {
+			&& isValidTitle(title)) {
 
 			this.title = title;
-		} else {
-			System.out.println("잘못된 입력입니다.");
 		}
 	}
 
-	private boolean isValideTitle(String title) {
+	private boolean isValidTitle(String title) {
 		
 		for (int i = 0; i < title.length(); i++) {
-			if ((title.charAt(i) < 'a' && title.charAt(i) > 'z')
-				|| (title.charAt(i) < 'A' && title.charAt(i) > 'Z')
-				|| (title.charAt(i) < '가' && title.charAt(i) > '힣')
-				|| title.charAt(i) != ' ' ) {
+			if ((title.charAt(i) < 'a' || title.charAt(i) > 'z')
+				&& (title.charAt(i) < 'A' || title.charAt(i) > 'Z')
+				&& (title.charAt(i) < '가' || title.charAt(i) > '힣')
+				&& title.charAt(i) != ' ' ) {
 				return false;
 			}
 		}
@@ -46,8 +44,6 @@ class Book {
 	public void setPrice(int price) {
 		if (price >= 0 && price <= 1000000) {
 			this.price = price;
-		} else {
-			System.out.println("잘못된 입력입니다.");
 		}
 	}
 
@@ -74,8 +70,6 @@ class Book {
 	public void setPage(int page) {
 		if (page > 0) {
 			this.page = page;
-		} else {
-			System.out.println("잘못된 입력입니다.");
 		}
 	}
 
@@ -88,6 +82,7 @@ class Book {
 	}
 
 	public String info() {
+		
 		String temp = "";
 		temp += String.format("제목: %s\n", this.title);
 		temp += String.format("가격: %,d원\n", this.price);

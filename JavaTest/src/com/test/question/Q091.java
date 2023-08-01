@@ -20,23 +20,53 @@ public class Q091 {
 			return;
 		}
 		
+//		getOp(input);
+		
+		
 	}
+
+//	private static char getOp(String input) {
+//
+//		for (int i = 0; i < input.length(); i++) {
+//			if (input.charAt(i) == '+') {
+//				return '+';
+//			} else if (input.charAt(i) == '+') {
+//				return '-';
+//			} else if (input.charAt(i) == '+') {
+//				return '*';
+//			} else if (input.charAt(i) == '+') {
+//				return '/';
+//			} else if (input.charAt(i) == '+') {
+//				return '%';
+//			}
+//		}
+//		return '';
+//	}
 
 	private static boolean validCheck(String input) {
 
 		int opCount = 0;
 		int numCount = 0;
+		boolean startNum = true;
 		
 		for (int i = 0; i < input.length(); i++) {
-			if (input.charAt(i) == '+'
-					||input.charAt(i) == '-'
-					||input.charAt(i) == '*'
-					||input.charAt(i) == '/'
-					||input.charAt(i) == '%') {
+			if (input.charAt(i) >= '0' && input.charAt(i) <= '9'
+					&& startNum) {
+				numCount++;
+				startNum = false;
+			} else if (input.charAt(i) == '+' || input.charAt(i) == '-' 
+					|| input.charAt(i) == '*' || input.charAt(i) == '/' 
+					|| input.charAt(i) == '%' ) {
 				opCount++;
+				startNum = true;
 			}
 		}
-		
-		return false;
+		System.out.println(opCount);
+		System.out.println(numCount);
+		if (opCount == 1 && numCount == 2) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

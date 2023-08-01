@@ -8,7 +8,7 @@ public class Main {
 		Book b1 = new Book();
 
 		//메소드 만들기
-		b1.setTitle("자바의 정석"); 
+		b1.setTitle(""); 
 		b1.setPrice(45000);
 		b1.setAuthor("남궁성");
 		b1.setPublisher("도우출판");
