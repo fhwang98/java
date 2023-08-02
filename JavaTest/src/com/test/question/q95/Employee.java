@@ -96,6 +96,27 @@ class Employee {
 	}
 
 	public void setBoss(Employee boss) {
+		/*
+			같ㅌ은 사람검사 
+			public void setBoss(Employee boss) {
+		      if (boss == null)
+		         return;
+		
+		      // 같은사람인가? 안의 값 모두 비교
+		      if (this.name.equals(boss.getName()) && this.department.equals(boss.getDepartment())
+		            && this.position.equals(boss.getPosition()) && this.tel.equals(boss.getTel())) {
+		         return;
+		      }
+		
+		      // 같은 부서인가?
+		      if (!this.department.equals(boss.getDepartment())) {
+		         return;
+		      }
+		      
+		      this.boss = boss;
+		   }
+		*/
+		
 		this.boss = boss;
 	}
 

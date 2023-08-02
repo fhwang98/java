@@ -34,7 +34,7 @@ public class Student {
 	
 	public String info() {
 		
-		return String.format("%s(나이: %s, 학년: %s, 반: %s, 번호: %s)\n"
+		return String.format("%s(나이: %s, 학년: %s, 반: %s, 번호: %s)"
 				, this.name
 				, this.age == 0 ? "미정" : Integer.toString(this.age) + "세"
 				, this.grade == 0 ? "미정" : Integer.toString(this.grade)

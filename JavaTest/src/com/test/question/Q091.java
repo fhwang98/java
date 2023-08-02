@@ -20,28 +20,36 @@ public class Q091 {
 			return;
 		}
 		
-//		getOp(input);
-		
+		char op = getOp(input);
+		int i = 0;
+		int num1;
+		while (input.charAt(i) != op) {
+			if (input.charAt(i) >= '0' && input.charAt(i) <= '9') {
+			}
+			i++;
+		}
 		
 	}
 
-//	private static char getOp(String input) {
-//
-//		for (int i = 0; i < input.length(); i++) {
-//			if (input.charAt(i) == '+') {
-//				return '+';
-//			} else if (input.charAt(i) == '+') {
-//				return '-';
-//			} else if (input.charAt(i) == '+') {
-//				return '*';
-//			} else if (input.charAt(i) == '+') {
-//				return '/';
-//			} else if (input.charAt(i) == '+') {
-//				return '%';
-//			}
-//		}
-//		return '';
-//	}
+
+private static char getOp(String input) {
+	
+		for (int i = 0; i < input.length(); i++) {
+			if (input.charAt(i) == '+') {
+				return '+';
+			} else if (input.charAt(i) == '-') {
+				return '-';
+			} else if (input.charAt(i) == '*') {
+				return '*';
+			} else if (input.charAt(i) == '/') {
+				return '/';
+			} else if (input.charAt(i) == '%') {
+				return '%';
+			}
+		}
+		return 0;
+	}
+
 
 	private static boolean validCheck(String input) {
 

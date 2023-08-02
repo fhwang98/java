@@ -1,7 +1,5 @@
 package com.test.question.q97;
 
-import java.util.Arrays;
-
 class Refrigerator {
 	private Item[] items = new Item[100];
 	private int index = 0;
@@ -15,48 +13,33 @@ class Refrigerator {
 			this.count++;
 			this.index++;
 		} else {
-			System.out.println("full");
+			System.out.println("냉장고가 가득 찼습니다.");
 		}
 	}
 
 	// 물건 꺼내는 메소드
 	public Item get(String name) {
 		
-		int itemIndex = getIndex(name, this.items);
-		//여기 오류남;;;;;;;;;;;;;;;
-				
+		int itemIndex = -1;
+		for (int i = 0; i < this.items.length; i++) {
+			if (this.items[i].getName().equals(name)) {
+				itemIndex = i;
+				break;
+			}
+		}
 		Item o = this.items[itemIndex];
 		
-		
-		int i = 1;
-		while (items[i] != null) {
-			
-			this.items[i - 1] = this.items[i];
-			//여기 자꾸 오류남;;;;;;;;;;;;;;;
-			i++;
+		for (int i = 0; i < this.items.length - 1; i++) {
+			this.items[i] = this.items[i + 1];
 		}
-		
-		
-		
 		this.items[this.items.length - 1] = null;
-
+		
 		this.count--;
 		this.index--;
 		
 		return o;
 	}
 
-	private int getIndex(String name, Item[] items) {
-
-		int i = 0;
-		while (items[i] != null) {
-			if (items[i].equals(name)) {
-				return i;
-			}
-			i++;
-		}
-		return -1;
-	}
 
 	public int count() {
 		
@@ -68,7 +51,7 @@ class Refrigerator {
 		
 		int i = 0;
 		while (items[i] != null) {
-			System.out.printf("%s(%tF)\n", this.items[i].getName(), this.items[i].getExpiration());
+			System.out.printf("%s(%s)\n", this.items[i].getName(), this.items[i].getExpiration());
 			i++;
 		}
 	}

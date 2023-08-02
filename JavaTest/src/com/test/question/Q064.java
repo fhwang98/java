@@ -7,7 +7,6 @@ public class Q064 {
 		//하나만 찾으면 됨
 
 		//1에서 20 사이 난수 생성...
-		//TODO 난수 생성 방법 복습
 		//System.out.println((int)(Math.random()*20 + 1));
 
 		//길이 20, 범위 1~20 의 난수배열 선언

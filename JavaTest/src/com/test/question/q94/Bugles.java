@@ -10,48 +10,43 @@ class Bugles {
 
 
 	public int getPrice() {
-		if (this.weight == 300) {
-			return 850;
-		} else if (this.weight == 500) {
-			return 1200;
-		} else if (this.weight == 850) {
-			return 1950;
-		} else {
-			return 0;
-		}
+		return price;
 	}
 
+
 	public int getExpiration() {
-		
+
 		long nowTick = System.currentTimeMillis();
 		long creationTick = this.creationTime.getTimeInMillis();
 		
 		long gap = nowTick - creationTick;
 		int afterCreation = (int)(gap / 1000 / 60 / 60 / 24);
-		
-		if (this.weight == 300) {
-			return 7 - afterCreation;
-		} else if (this.weight == 500) {
-			return 10 - afterCreation;
-		} else {
-			return 15 - afterCreation;
-		}
+				
+		return expiration - afterCreation;
 	}
 
+
 	public void setSize(int weight) {
+
+		
 		if (weight == 300 || weight == 500 || weight == 850) {
 			this.weight = weight;
-			if (weight == 300) {
-				
+			if (this.weight == 300) {
+				this.price = 850;
+				this.expiration = 7;
+			} else if (this.weight == 500) {
+				this.price = 1200;
+				this.expiration = 10;
+			} else if (this.weight == 850) {
+				this.price = 1950;
+				this.expiration = 15;
 			}
-			
-			
-			
 		} else {
 			System.out.println("잘못된 입력입니다.");
 		}
 	}
 
+	
 	public void setCreationTime(String date) {
 
 		Calendar c = Calendar.getInstance();

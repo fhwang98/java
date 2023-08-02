@@ -1,10 +1,10 @@
 package com.test.question.q97;
 
-import java.util.Calendar;
 
 class Item {
 	private String name;
-	private Calendar expiration;
+//	private Calendar expiration;
+	private String expiration;
 
 	public String getName() {
 		return name;
@@ -14,21 +14,16 @@ class Item {
 		this.name = name;
 	}
 
-	public Calendar getExpiration() {
+	public String getExpiration() {
 		return expiration;
 	}
 
 	public void setExpiration(String expiration) {
-		
 		int year = Integer.parseInt(expiration.substring(0, 4));
 		int month = Integer.parseInt(expiration.substring(5, 7));
 		int date = Integer.parseInt(expiration.substring(8, 10));
 		
-		Calendar exp = Calendar.getInstance();
-		
-		exp.set(year, month - 1, date);
-		
-		this.expiration = exp;
+		this.expiration = String.format("%d-%02d-%02d", year, month, date);
 	}
 
 }
