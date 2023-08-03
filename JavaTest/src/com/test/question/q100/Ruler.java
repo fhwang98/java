@@ -24,7 +24,7 @@ public class Ruler {
 			this.shape = shape;
 		}
 	}
-
+	
 	public String info() {
 		return String.format("%dcm %s", this.length, this.shape);
 	}

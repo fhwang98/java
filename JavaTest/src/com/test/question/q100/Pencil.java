@@ -16,7 +16,7 @@ public class Pencil {
 			this.hardness = hardness;
 		}
 	}
-
+	
 	public String info() {
 		return String.format("%s 진하기 연필", hardness);
 	}

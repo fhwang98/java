@@ -81,7 +81,6 @@ public class Ex57_Generic {
 		
 		
 		
-		//int
 		WrapperObject n2 = new WrapperObject(200);
 		System.out.println(n2.toString());
 		//System.out.println(n2.getData() * 2); // n2 > object변수 > 주소값이라 연산 안됨
@@ -98,9 +97,28 @@ public class Ex57_Generic {
 		System.out.println(b2.toString());
 		//System.out.println(b2.getData() ? "참" : "거짓"); // cannot convert from Object to boolean
 		System.out.println((boolean)b2.getData() ? "참" : "거짓");
+		System.out.println();
+		System.out.println();
+		System.out.println();
 		
 		
 		
+		//제네릭 클래스
+		
+		Wrapper<Integer> n3 = new Wrapper<Integer>(300);
+		System.out.println(n3.toString());
+		System.out.println(n3.getData() * 2);
+		System.out.println();
+		
+		Wrapper<String> s3 = new Wrapper<String>("흠냐링");
+		System.out.println(s3.toString());
+		System.out.println(s3.getData().length());
+		System.out.println();
+		
+		Wrapper<Boolean> b3 = new Wrapper<Boolean>(true);
+		System.out.println(b3.toString());
+		System.out.println(b3.getData() ? "참" : "거짓");
+		System.out.println();
 		
 		
 	}//main
@@ -183,6 +201,7 @@ class WrapperObject {
 	
 	private Object data; //*********** 모든 데이터를 넣을 수 있음
 	
+	//생성자
 	public WrapperObject(Object data) {
 		this.setData(data);
 	}
@@ -198,6 +217,31 @@ class WrapperObject {
 	@Override
 	public String toString() {
 		return "WrpperObject [data=" + data + "]";
+	}
+	
+}
+
+
+class Wrapper<T> {
+	
+	private T data;
+	
+	//생성자
+	public Wrapper(T data) { //생성자에는 <> 안씀
+		this.setData(data);;
+	}
+
+	public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
+
+	@Override
+	public String toString() {
+		return "Wrapper [data=" + data + "]";
 	}
 	
 }

@@ -13,6 +13,13 @@ public class Student {
 		this("미정", 0, 0, 0, 0);
 	}
 
+	public Student(String name, int age) {
+		this(name, age, 0, 0, 0);
+	}
+	
+	public Student(int grade, int classNumber, int number) {
+		this("미정", 0, grade, classNumber, number);
+	}
 
 	public Student(String name, int age, int grade, int classNumber, int number) {
 		this.name = name;
@@ -22,15 +29,6 @@ public class Student {
 		this.number = number;
 	}
 
-
-	public Student(String name, int age) {
-		this(name, age, 0, 0, 0);
-	}
-
-
-	public Student(int grade, int classNumber, int number) {
-		this("미정", 0, grade, classNumber, number);
-	}
 	
 	public String info() {
 		

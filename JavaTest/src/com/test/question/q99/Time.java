@@ -29,6 +29,14 @@ public class Time {
 			}
 			this.hour = hour;
 		}
+		//코드리뷰 수정님 코드 훨씬 간결!!
+		/*
+			this.second = second % 60;
+			this.hour = (second/60 + minute)/60;
+			this.minute = (second/60 + minute) % 60;
+			this.hour += hour;
+		
+		*/
 	}
 	
 	public Time(int minute, int second) {

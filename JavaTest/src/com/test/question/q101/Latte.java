@@ -9,13 +9,27 @@ public class Latte {
 		return bean;
 	}
 	public void setBean(int bean) {
-		this.bean = bean;
+		if (bean > 0) {
+			this.bean = bean;
+		}
 	}
 	public int getMilk() {
 		return milk;
 	}
 	public void setMilk(int milk) {
-		this.milk = milk;
+		if (milk > 0) {
+			this.milk = milk;
+		}
+	}
+	
+	//생성자
+	public Latte() {
+		this(0, 0);
+	}
+	
+	public Latte(int bean, int milk) {
+		this.setBean(bean);
+		this.setMilk(milk);
 	}
 	
 	public void drink() {

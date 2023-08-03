@@ -33,6 +33,9 @@ class Refrigerator {
 			this.items[i] = this.items[i + 1];
 		}
 		this.items[this.items.length - 1] = null;
+		//코드리뷰
+		// for를 length까지 돌려도 마지막에 자동으로 null이 들어감!
+		
 		
 		this.count--;
 		this.index--;

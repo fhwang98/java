@@ -4,8 +4,7 @@ package com.test.question.q101;
 public class Barista {
 	
 	public Espresso makeEspresso(int bean) {
-		Espresso espresso = new Espresso();
-		espresso.setBean(bean);
+		Espresso espresso = new Espresso(bean);
 		
 		Coffee.setBean(bean);
 		Coffee.setBeanTotalPrice(espresso.getBean());
@@ -16,8 +15,7 @@ public class Barista {
 	public Espresso[] makeEspressoes(int bean, int count) {
 		Espresso[] espressos = new Espresso[count];
 		for (int i = 0; i < count; i++) {
-			espressos[i] = new Espresso();
-			espressos[i].setBean(bean);
+			espressos[i] = new Espresso(bean);
 			Coffee.setBean(espressos[i].getBean());
 			Coffee.setBeanTotalPrice(espressos[i].getBean());
 			Coffee.setEspresso();
@@ -26,9 +24,7 @@ public class Barista {
 	}
 	
 	public Latte makeLatte(int bean, int milk) {
-		Latte latte = new Latte();
-		latte.setBean(bean);
-		latte.setMilk(milk);
+		Latte latte = new Latte(bean, milk);
 		
 		Coffee.setBean(latte.getBean());
 		Coffee.setBeanTotalPrice(latte.getBean());
@@ -41,9 +37,7 @@ public class Barista {
 	public Latte[] makeLattes(int bean, int milk, int count) {
 		Latte[] lattes = new Latte[count];
 		for (int i = 0; i < count; i++) {
-			lattes[i] = new Latte();
-			lattes[i].setBean(bean);
-			lattes[i].setMilk(milk);
+			lattes[i] = new Latte(bean, milk);
 			
 			Coffee.setBean(lattes[i].getBean());
 			Coffee.setBeanTotalPrice(lattes[i].getBean());
@@ -55,10 +49,7 @@ public class Barista {
 	}
 	
 	public Americano  makeAmericano(int bean, int water, int ice) {
-		Americano americano = new Americano();
-		americano.setBean(bean);
-		americano.setWater(water);
-		americano.setIce(ice);
+		Americano americano = new Americano(bean, water, ice);
 		
 		Coffee.setBean(americano.getBean());
 		Coffee.setBeanTotalPrice(americano.getBean());
@@ -74,10 +65,7 @@ public class Barista {
 	public Americano[] makeAmericanos(int bean, int water, int ice, int count) {
 		Americano[] americanos = new Americano[count];
 		for (int i = 0; i < count; i++) {
-			americanos[i] = new Americano();
-			americanos[i].setBean(bean);
-			americanos[i].setWater(water);
-			americanos[i].setIce(ice);
+			americanos[i] = new Americano(bean, water, ice);
 			
 			Coffee.setBean(americanos[i].getBean());
 			Coffee.setBeanTotalPrice(americanos[i].getBean());

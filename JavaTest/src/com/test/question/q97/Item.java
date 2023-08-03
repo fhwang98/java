@@ -3,7 +3,6 @@ package com.test.question.q97;
 
 class Item {
 	private String name;
-//	private Calendar expiration;
 	private String expiration;
 
 	public String getName() {
