@@ -70,7 +70,6 @@ public class Packer {
 			System.out.printf("자 %d회\n", Packer.rulerCount);
 		} 
 		
-		System.out.println();
 	}
 	
 }

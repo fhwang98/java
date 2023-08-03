@@ -4,7 +4,6 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// TODO 포장 풀기
 
 		// 포장하는 직원
 		Packer packer = new Packer();

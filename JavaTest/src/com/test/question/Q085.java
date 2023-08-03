@@ -36,7 +36,6 @@ public class Q085 {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		
 		System.out.print("주민등록번호: ");
 		String jumin = scan.nextLine();
 		
@@ -48,7 +47,7 @@ public class Q085 {
 			System.out.println("올바르지 않은 주민등록번호입니다.");
 		}
 		
-	}
+	}//main
 
 	private static boolean validCheck(String jumin) {
 
@@ -56,6 +55,9 @@ public class Q085 {
 		// 전부 숫자인지
 		
 		if (!isNum(jumin)) {
+			return false;
+		}
+		if (jumin.length() != 13) {
 			return false;
 		}
 		
@@ -68,12 +70,29 @@ public class Q085 {
 			return false;
 		}
 		
+		//마지막자리 빼고는 검증이 끝났으니까 숫자들을 int배열에 넣어줌
+		
+		int[] nums = new int[jumin.length()];
+		
+		for (int i = 0; i < jumin.length(); i++) {
+			nums[i] = jumin.charAt(i) - '0';
+		}
+		
 		// 마지막 숫자 검증
-		
-		
-		
-		return false;
+		int sum = 0;
+		for (int i = 0; i < jumin.length() - 1; i++) {
+			sum += nums[i] * (i % 8 + 2); 
+		}
+		while (sum >= 10) {
+			sum %= 11;		
+		}
+		if (nums[jumin.length() - 1] == 11 - sum) {
+			return true;
+		} else {
+			return false;
+		}
 	}
+
 
 	//q42 참고
 	private static boolean isDate(String yy, String mm, String dd) {
@@ -132,4 +151,4 @@ public class Q085 {
 		}
 		return true;
 	}
-}
+}//class
