@@ -8,10 +8,16 @@ public class Main {
 
 		// 추가
 		queue.add("빨강");
-		queue.add("노랑");
-		queue.add("파랑");
 		queue.add("주황");
+		queue.add("노랑");
+		queue.add("초록");
+		queue.add("파랑");
+		queue.add("남색");
+		queue.add("보라");
+		queue.add("분홍");
 		queue.add("검정");
+		queue.add("흰색");
+		System.out.println(queue.size());
 
 		// 읽기
 		System.out.println(queue.poll());

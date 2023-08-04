@@ -42,7 +42,7 @@ public class Ex61_Stack {
 //		m2();
 		
 		//Queue
-//		m3();
+		m3();
 		
 		
 		
@@ -85,6 +85,8 @@ public class Ex61_Stack {
 		}
 		
 		//5. 요소 확인
+		queue.peek();
+		System.out.println("peek");
 		System.out.println(queue.peek());
 		
 	}

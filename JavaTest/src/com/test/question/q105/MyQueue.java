@@ -58,13 +58,13 @@ public class MyQueue {
 	}
 	
 	public void clear() {
-		this.queue = new String[0];
+		this.queue = new String[4];
 		this.index = 0;
 	}
 	
 	public void trimToSize() {
 		if (this.index != this.queue.length) {
-			String[] newQueue = new String[this.queue.length * 2];
+			String[] newQueue = new String[this.index];
 			for (int i = 0; i < this.index; i++) {
 				newQueue[i] = queue[i];
 			}

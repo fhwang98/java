@@ -132,8 +132,8 @@ public class MyArrayList {
 	
 	public void trimToSize() {
 		if (this.index != this.list.length) {
-			String[] newList = new String[this.index + 1];
-			for (int i = 0; i <= this.index; i++) {
+			String[] newList = new String[this.index];
+			for (int i = 0; i < this.index; i++) {
 				newList[i] = this.list[i];
 			}
 			this.list = newList;
