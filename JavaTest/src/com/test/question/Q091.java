@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Q091 {
 
 	public static void main(String[] args) {
-		//TODO 연산식 풀기
 		
 		//연산식을 입력받아 진짜 연산을 함
 		//띄어쓰기 무시

@@ -5,7 +5,6 @@ public class Ex52_interface {
 	public static void main(String[] args) {
 
 		//인터페이스 > 제네릭 > 형변환
-		//TODO 형변환 이후 다시 수업
 		
 		//인터페이스
 		//- 클래스(객체) 행동 규격

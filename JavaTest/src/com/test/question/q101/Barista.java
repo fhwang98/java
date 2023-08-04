@@ -6,7 +6,7 @@ public class Barista {
 	public Espresso makeEspresso(int bean) {
 		Espresso espresso = new Espresso(bean);
 		
-		Coffee.setBean(bean);
+		Coffee.setBean(espresso.getBean());
 		Coffee.setBeanTotalPrice(espresso.getBean());
 		Coffee.setEspresso();
 		return espresso;		

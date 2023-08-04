@@ -106,40 +106,6 @@ public class Coffee { //Coffee 공용 정보 클래스 > 상속 아님!! static 
 	
 }
 
-/*
- * 카운트를 올려주는건 Coffee 클래스 안에서
- * public static void countCoffee(Espresso espresso) {
-      Coffee.espresso++; // 에스프레소 주문수 증가
-      Coffee.bean += espresso.getBean(); // 빈 총량 증가
-      Coffee.beanTotalPrice += Coffee.beanUnitPrice * espresso.getBean(); // 빈 총 가격 증가
-   }
-
-   public static void countCoffee(Latte latte) {
-      Coffee.latte++; // 라떼 개수 증가
-
-      Coffee.bean += latte.getBean(); // 빈 총량 증가
-      Coffee.beanTotalPrice += Coffee.beanUnitPrice * latte.getBean(); // 총 가격 증가
-
-      Coffee.milk += latte.getMilk(); // 우유 총량 증가
-      Coffee.milkTotalPrice += Coffee.milkUnitPrice * latte.getMilk(); // 우유 총 가격 증가
-   }
-
-   public static void countCoffee(Americano americano) {
-      Coffee.americano++; // 아메리카노 개수 증가
-
-      Coffee.bean += americano.getBean(); // 빈 총량 증가
-      Coffee.water += americano.getWater(); // 물 총량 증가
-      Coffee.ice += americano.getIce(); // 얼음 총량 증가
-
-      Coffee.beanTotalPrice += Coffee.beanUnitPrice * americano.getBean(); // 빈 총 가격 증가
-//      System.out.println("Coffee.beanTotalPrice: " + Coffee.beanTotalPrice);
-      Coffee.waterTotalPrice += Coffee.waterUnitPrice * americano.getWater(); // 물 총 가격 증가
-      Coffee.iceTotalPrice += Coffee.iceUnitPrice * americano.getIce(); // 얼음 총 가격 증가
-
-   }
- */
-
-
 
 
 

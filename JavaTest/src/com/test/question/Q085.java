@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Q085 {
 
 	public static void main(String[] args) {
-		//TODO 주민번호 풀기
 		
 		// '-' 입력해도 안해도 맞는 거로
 		
