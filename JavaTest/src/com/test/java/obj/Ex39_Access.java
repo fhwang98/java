@@ -24,6 +24,7 @@ public class Ex39_Access {
 			
 			public
 			-
+			//TODO 왜,... 비어있지..?
 			
 			private
 			-

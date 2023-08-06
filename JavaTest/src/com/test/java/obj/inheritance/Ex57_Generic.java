@@ -228,7 +228,7 @@ class Wrapper<T> {
 	
 	//생성자
 	public Wrapper(T data) { //생성자에는 <> 안씀
-		this.setData(data);;
+		this.setData(data);
 	}
 
 	public T getData() {
