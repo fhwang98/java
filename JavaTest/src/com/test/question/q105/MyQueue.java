@@ -7,6 +7,7 @@ public class MyQueue {
 	
 	public MyQueue() {
 		this.index = 0;
+		
 	}
 	
 	public boolean add(String value) {
@@ -38,8 +39,6 @@ public class MyQueue {
 	}
 	
 	public String poll() {
-		//인덱스 0 에 있는 값을 꺼내고 시프트, 인덱스--
-		//리턴하기 위해 값을 기억해야...
 		
 		String first = this.queue[0];
 		for (int i = 0; i < this.index - 1; i++) { //삭제 
@@ -47,6 +46,7 @@ public class MyQueue {
 		}
 		this.index--;
 		return first;
+		
 	}
 	
 	public int size() {
@@ -58,8 +58,10 @@ public class MyQueue {
 	}
 	
 	public void clear() {
+		
 		this.queue = new String[4];
 		this.index = 0;
+		
 	}
 	
 	public void trimToSize() {
@@ -72,3 +74,6 @@ public class MyQueue {
 		}
 	}
 }
+
+
+//queue가 비어있을 때 poll() peek() 실행되지 않게 예외처리

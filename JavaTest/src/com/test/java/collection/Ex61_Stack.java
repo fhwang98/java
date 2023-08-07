@@ -95,6 +95,7 @@ public class Ex61_Stack {
 		
 		Stack<String> stack = new Stack<String>();
 		
+		
 		stack.push("짜장면");
 		stack.push("짬뽕");
 		stack.push("볶음밥");

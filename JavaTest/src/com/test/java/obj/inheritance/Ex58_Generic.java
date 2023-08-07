@@ -60,9 +60,9 @@ class Desk<T> {
 	public T a; //멤버 변수의 자료형
 	
 	public void set(T a) { //메소드 매개변수의 자료형
-		this.a =a ;
+		this.a = a;
 		
-		T b; //지혁변수의 자료형 > 비권장...
+		T b; //지역변수의 자료형 > 비권장...
 		
 	}
 	

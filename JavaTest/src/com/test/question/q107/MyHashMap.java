@@ -27,8 +27,8 @@ public class MyHashMap {
 			this.keys = newKeys;
 			this.values = newValues;
 		}
-		 this.keys[this.index] = key;
-		 this.values[this.index] = value;
+		this.keys[this.index] = key;
+		this.values[this.index] = value;
 		this.index++;
 		 
 		return null;
