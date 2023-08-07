@@ -18,14 +18,7 @@ public class MyHashMap {
 			this.values[indexOfKey(key)] = value;
 			return null;
 		} else if (this.index == this.keys.length){
-			String[] newKeys = new String[this.keys.length * 2];
-			String[] newValues = new String[this.keys.length * 2];
-			for (int i = 0; i < this.index; i++) {
-				newKeys[i] = this.keys[i];
-				newValues[i] = this.values[i];
-			}
-			this.keys = newKeys;
-			this.values = newValues;
+			doubleLength();
 		}
 		this.keys[this.index] = key;
 		this.values[this.index] = value;
@@ -33,6 +26,17 @@ public class MyHashMap {
 		 
 		return null;
 		
+	}
+
+	private void doubleLength() {
+		String[] newKeys = new String[this.keys.length * 2];
+		String[] newValues = new String[this.keys.length * 2];
+		for (int i = 0; i < this.index; i++) {
+			newKeys[i] = this.keys[i];
+			newValues[i] = this.values[i];
+		}
+		this.keys = newKeys;
+		this.values = newValues;
 	}
 
 	private int indexOfKey(String key) {

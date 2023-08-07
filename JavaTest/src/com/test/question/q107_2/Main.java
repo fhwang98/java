@@ -1,41 +1,55 @@
 package com.test.question.q107_2;
 
-import com.test.question.q106.MyStack;
+import java.util.HashMap;
 
 public class Main {
 
 	public static void main(String[] args) {
 
 		//배열 생성
-		MyStack stack = new MyStack();
+		MyHashMap map = new MyHashMap();
+		HashMap<String, Integer> m = new HashMap<String, Integer>();
 
-		//추가
-		stack.push("빨강");
-		stack.push("노랑");
-		stack.push("파랑");
-		stack.push("주황");
-		stack.push("검정");
-		System.out.println(stack.size());
+		System.out.println(m.remove("국어"));
 
-		//읽기
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-
-		//개수
-		System.out.println(stack.size());
-
-		//확인
-		System.out.println(stack.peek());
-		System.out.println(stack.peek());
-		System.out.println(stack.size());
-
-		//크기 조절
-		stack.trimToSize();
-
-		//초기화
-		stack.clear();
-		System.out.println(stack.size());
+//		//추가
+//		map.put("국어", "합격");
+//		map.put("영어", "불합격");
+//		map.put("수학", "보류");
+//
+//		//읽기
+//		System.out.println(map.get("국어"));
+//		System.out.println(map.get("영어"));
+//		System.out.println(map.get("수학"));
+//
+//		//개수
+//		System.out.println(map.size());
+//
+//		//수정
+//		map.put("영어", "합격");
+//		System.out.println(map.get("영어"));
+//
+//		//삭제
+//		map.remove("영어");
+//		System.out.println(map.get("영어"));
+//
+//		//검색(key)
+//		if (map.containsKey("국어")) {
+//		      System.out.println("국어 점수 있음");
+//		} else {
+//		      System.out.println("국어 점수 없음");
+//		}
+//
+//		//검색(value)
+//		if (map.containsValue("합격")) {
+//		      System.out.println("합격 과목 있음");
+//		} else {
+//		      System.out.println("합격 과목 없음");
+//		}
+//
+//		//초기화
+//		map.clear();
+//		System.out.println(map.size());
 	}
 
 }

@@ -34,7 +34,7 @@ public class MyQueue {
 	
 	public String poll() {
 		if (this.index == 0) {
-			throw new IndexOutOfBoundsException();
+			return null;
 		}
 		String firstIn = this.queue[0];
 		for (int i = 0; i < this.index - 1; i++) {
@@ -50,7 +50,7 @@ public class MyQueue {
 	
 	public String peek() {
 		if (this.index == 0) {
-			throw new IndexOutOfBoundsException();
+			return null;
 		}
 		return this.queue[0];
 	}
