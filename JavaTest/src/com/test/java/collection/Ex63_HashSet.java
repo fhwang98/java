@@ -26,8 +26,8 @@ public class Ex63_HashSet {
 		*/ 
 		
 //		m1();
-//		m2();
-		m3();
+		m2();
+//		m3();
 		
 		
 		

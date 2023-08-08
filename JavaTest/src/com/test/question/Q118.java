@@ -15,14 +15,51 @@ public class Q118 {
 		getArrayList(dir, list);
 		sortArrayList(list);
 		
-		
-		System.out.println(list);
+		System.out.printf("%-30s\t%8s\t%-5s\n", "[파일명]", "[크기]", "[파일이 들어있는 폴더]");
+		for (File f : list) {
+			
+			String size = getSize((double)f.length());
+
+			System.out.printf("%-30s\t%8s\t%-5s\n", f.getName(), size, f.getParentFile().getName());
+		}
 	}
+	
+	private static String getSize(double length) {
+		String result = "";
+		
+		for (int i = 0; i < 5; i++) {
+			if (length <= 1024) {
+				if (i == 0) {
+					result = String.format("%,.0fB", length);
+				} else if (i == 1) {
+					result = String.format("%,.1fKB", length);
+				} else if (i == 2) {
+					result = String.format("%,.1fMB", length);
+				} else if (i == 3) {
+					result = String.format("%,.1fGB", length);
+				} else {
+					result = String.format("%,.1fGB", length);
+				}
+				break;
+			}
+			length /= 1024 ;
+		}
+		return result;
+	}
+	
 
 	private static void sortArrayList(ArrayList<File> list) {
 		//정렬
-		for (int i = 0 ; i< list.size(); i++) {
 		
+		File temp;
+		for (int i = 0 ; i < list.size() - 1; i++) {
+			for (int j = 0; j < list.size() - 1 - i; j++) {
+				if (list.get(j).length() < list.get(j + 1).length()) {
+					temp = list.get(j);
+					list.set(j, list.get(j + 1));
+					list.set(j + 1, temp);
+				}
+			}
 			
 		}
 		

@@ -1,8 +1,14 @@
 package com.test.java.io;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class Ex65_File {
 	
@@ -62,12 +68,179 @@ public class Ex65_File {
 			
 		*/
 		
+		
+		//FileInput/OutputStream
 //		m1();
 //		m2();
-		m3();
 		
-
+		//FileReader/Writer
+//		m3();
+//		m4();
+		
+		//BufferedReader/Writer
+//		m5();
+//		m6();
+		
+		
+//		m7();
+		m8();
+		
+		
+		
+		
+		
 	}//main
+
+	private static void m8() {
+		
+		try {
+			//C:\class\code\java\JavaTest\src\com\test\java\Ex32_Array.java
+			
+			BufferedReader reader = new BufferedReader(new FileReader("C:\\class\\code\\java\\JavaTest\\src\\com\\test\\java\\Ex32_Array.java"));
+			
+			String line = null;
+			int n = 1;
+			
+			while ((line = reader.readLine()) != null) {
+				
+				System.out.printf("%3d: %s\n", n, line);
+				n++;
+				
+			}
+			
+		} catch (Exception e) {
+			System.out.println("at Ex65_File.m8");
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+	private static void m7() {
+
+		//메모장 쓰기
+		try {
+			Scanner scan = new Scanner(System.in);
+			
+			System.out.print("저장할 파일명: ");
+			String filename = scan.nextLine();
+			
+			BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\class\\code\\java\\file\\" + filename + ".txt"));
+			
+			boolean loop = true;
+			
+			while (loop) {
+				System.out.print("입력: ");
+				String line = scan.nextLine();
+				
+				if (line.equals("exit")) {
+					break;
+				}
+				
+				writer.write(line); // 한줄 입력(scan) > 한줄 쓰기(writer)
+				writer.write("\r\n");
+				
+			}
+			
+			writer.close();
+			
+			System.out.println("파일 저장 완료");
+			
+			
+		} catch (Exception e) {
+			System.out.println("at Ex65_File.m7");
+			e.printStackTrace();
+		}
+		
+	}
+
+	private static void m6() {
+
+		try {
+			
+			//콘솔 입력
+			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+			
+			//파일 입력
+			BufferedReader reader2 = new BufferedReader(new FileReader("C:\\class\\code\\java\\file\\memo.txt"));
+			
+			//- reader2.read();
+			//- reader2.readLine();
+			
+			//String line = reader2.readLine();
+			//System.out.println(line);
+			
+			
+			String line = null;
+			
+			while ((line = reader2.readLine()) != null) {
+				System.out.println(line);
+			}
+			
+			
+			reader.close();
+			
+		} catch (Exception e) {
+			System.out.println("at Ex65_File.m6");
+			e.printStackTrace();
+		}
+	}
+
+	private static void m5() {
+
+		//쓰기
+		//- FileOutputStream > FileWriter > BufferedWriter
+		
+		//읽기
+		//- FileInputStream > FileReader > BufferedReader
+		
+		//쓰기
+		try {
+			
+			BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\class\\code\\java\\file\\memo.txt"));
+			
+			writer.write("하나");
+			writer.write('A');
+			writer.write("\r\n");
+			writer.write("둘");
+			writer.newLine();
+			writer.write("셋");
+			
+			writer.close();
+			
+		} catch (Exception e) {
+			System.out.println("at Ex65_File.m5");
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+	private static void m4() {
+
+		try {
+			
+			FileReader reader = new FileReader("C:\\class\\code\\java\\file\\member.txt");
+			
+			int code = -1;
+			
+			//한글자씩 읽어야함 FileInputStream과 차이 > 한글이 안깨짐
+			//int code = reader.read();
+			//System.out.println((char)code);
+			
+			while ((code = reader.read()) != -1) {
+				System.out.print((char)code);
+			}
+			System.out.println();
+			
+			reader.close();
+			
+		} catch (Exception e) {
+			System.out.println("at Ex65_File.m4");
+			e.printStackTrace();
+		}
+		
+	}
 
 	private static void m3() {
 		
@@ -76,6 +249,33 @@ public class Ex65_File {
 		
 		//읽기
 		//- FileInputStream > FileReader
+		
+		try {
+			
+			FileWriter writer = new FileWriter("C:\\class\\code\\java\\file\\member.txt");
+			
+			//writer.write(65);
+			//writer.write("ABC");
+			writer.write("홍길동");
+			
+			writer.close();
+			
+			//writer.write("아무개"); //Stream closed 스트림 닫은 후 사용 x
+			
+			//다시 사용하려면 다시 열어야함
+			writer = new FileWriter("C:\\class\\code\\java\\file\\member.txt");
+			writer.write("아무개");
+			writer.close();
+			
+			
+			System.out.println("종료");
+			
+			
+			
+		} catch (Exception e) {
+			System.out.println("at Ex65_File.m3");
+			e.printStackTrace();
+		}
 		
 	}
 
