@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
 
-public class ex64_File {
+public class Ex64_File {
 
 	//누적변수
 	private static int count = 0; //파일 개수

@@ -20,21 +20,33 @@ public class Q110 {
 		System.out.printf("파일명 : %s\n", name);
 		System.out.printf("종류 : %s 파일\n", name.substring(name.lastIndexOf(".") + 1));
 		//파일 크기 단위 변환
-		String size = getSize(file.length());
+		String size = getSize((double)file.length());
 		System.out.printf("파일 크기 : %s\n", size);
 		
 		
 	}
 
-	private static String getSize(long length) {
+	private static String getSize(double length) {
+		String result = "";
 		
-		String size = (length <= 1024) ? String.format("%,dB", length)
-					: (length <= 1024 * 1024) ? String.format("%,.1fKB", length/1024.0)
-					: (length <= 1024 * 1024 * 1024) ? String.format("%,.1fMB", length/1024/1024.0)
-					: (length <= 1024 * 1024 * 1024 * 1024) ? String.format("%,.1fGB", length/1024/1024/1024.0)
-					: (length <= 1024 * 1024 * 1024 * 1024 * 1024) ? String.format("%,.1fTB", length/1024/1024/1024/1024.0) : "";
-		
-		return size;
+		for (int i = 0; i < 5; i++) {
+			if (length <= 1024) {
+				if (i == 0) {
+					result = String.format("%,.0fB", length);
+				} else if (i == 1) {
+					result = String.format("%,.1fKB", length);
+				} else if (i == 2) {
+					result = String.format("%,.1fMB", length);
+				} else if (i == 3) {
+					result = String.format("%,.1fGB", length);
+				} else {
+					result = String.format("%,.1fGB", length);
+				}
+				break;
+			}
+			length /= 1024 ;
+		}
+		return result;
 	}
 
 }
