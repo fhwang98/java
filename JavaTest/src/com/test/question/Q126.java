@@ -2,13 +2,26 @@ package com.test.question;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.HashMap;
 
 public class Q126 {
 
 	public static void main(String[] args) {
 		try {
+
 			
-			BufferedReader reader = new BufferedReader(new FileReader(""));
+			BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\user\\Downloads\\파일_입출력_문제\\출결.dat"));
+			
+			String line = null;
+			
+			HashMap map = new HashMap();
+			
+			while ((line = reader.readLine()) != null) {
+				//저장해야하는 정보 : 이름, 지각 누적 카운팅, 조퇴 누적 카운팅
+				
+				
+			}
+			
 			
 			reader.close();
 			

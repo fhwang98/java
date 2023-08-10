@@ -34,7 +34,7 @@ public class Ex72_Lambda {
 		
 //		m1();
 //		m2();
-		m3();
+//		m3();
 		
 		
 	}//main

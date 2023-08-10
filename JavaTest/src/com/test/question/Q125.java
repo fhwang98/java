@@ -22,19 +22,30 @@ public class Q125 {
 			while ((code = reader.read()) != -1) {
 				if (code == '(' || code == '{') { //여는 괄호를 만나면 스택에 쌓는다
 					stack.add((char)code);
-				} else if (code == ')' || code == '}') { //닫는 괄호를 만나면 확인한다
-					if (stack.pop() == '(' && code == ')') {
-						continue;
-					} else if (stack.pop() == '(' && code == '}') {
-						System.out.println("안맞음");
+				} else if (code == ')') { //닫는 괄호를 만났는데
+					if (stack.size() == 0) { //스택이 비어있다
+						System.out.println("안맞");
 						break;
-					} else if (stack.pop() == '{' && code == '}') {
-						continue;
-					} else if (stack.pop() == '{' && code == ')') {
-						System.out.println("안맞음");
+					}
+					if (stack.pop() == '{') { //짝이 안맞는다
+						System.out.println("안맞");
+						break;
+					}
+				} else if (code == '}') {
+					if (stack.size() == 0) {
+						System.out.println("안맞");
+						break;
+					}
+					if (stack.pop() == '(') {
+						System.out.println("안맞");
 						break;
 					}
 				}
+			}
+			
+			System.out.println(stack);
+			if (code == -1 && stack.size() == 0) {
+				System.out.println("맞음!!");
 			}
 			
 			

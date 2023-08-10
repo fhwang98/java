@@ -68,14 +68,23 @@ public class MySet {
 		this.index = 0;
 	}
 	
-//	public boolean hasNext() {
-//
-//	}
-//	
-//	public String next() {
-//		//반환값 : 다음 요소
-//	}
-//	
+	
+	//어려워요 ... 
+	public boolean hasNext() {
+		if (this.nextIndex < this.index) {
+			return true;
+		}
+		return false;
+	}
+	
+	public String next() {
+		//반환값 : 다음 요소
+		String temp = this.set[this.nextIndex] ;
+		
+		this.nextIndex++;
+		return temp;
+	}
+	
 	@Override
 	public String toString() {
 		return "MySet [set=" + Arrays.toString(set) + ", index=" + index + "]";
