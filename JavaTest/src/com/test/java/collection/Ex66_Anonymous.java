@@ -9,8 +9,6 @@ public class Ex66_Anonymous {
 			- 익명 클래스, Anonymous Class
 			- 이름없는 클래스
 			
-			
-			
 		*/
 		
 		//요구사항] 인터페이스를 구현한 클래스 선언 > 객체 생성

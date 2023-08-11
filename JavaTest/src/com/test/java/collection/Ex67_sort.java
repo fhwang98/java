@@ -288,7 +288,7 @@ public class Ex67_sort {
 		
 		Double[] nums2 = {2.5, 7.1, 3.8, 9.2, 8.9};
 		
-		//Arrays.sort(nums2, new MyComparator()); //안됨!
+		//Arrays.sort(nums2, new MyComparator()); //MyComparator는 Integer로 만들어서 안됨!
 		Arrays.sort(nums2, new Comparator<Double>() {
 
 			@Override
