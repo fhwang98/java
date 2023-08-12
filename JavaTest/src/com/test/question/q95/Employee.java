@@ -96,6 +96,9 @@ class Employee {
 	}
 
 	public void setBoss(Employee boss) {
+		if (boss == null) {
+			return;
+		}
 		if (!this.department.equals(boss.department)) {
 			return;
 		}

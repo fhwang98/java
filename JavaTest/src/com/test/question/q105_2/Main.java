@@ -12,8 +12,8 @@ public class Main {
 		//배열 생성
 		MyQueue queue = new MyQueue();
 
-		System.out.println(q.peek());
-		System.out.println(q.poll());
+		System.out.println(q.peek()); //비어있을때 null
+		System.out.println(q.poll()); //비어있을때 null
 		
 		//추가
 		queue.add("빨강");

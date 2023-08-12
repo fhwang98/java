@@ -7,11 +7,11 @@ public class MySet {
 
 	private String[] set;
 	private int index;
-	private int nextIndex;
+	private int iterIndex;
 	
 	public MySet() {
 		this.index = 0;
-		this.nextIndex = 0;
+		this.iterIndex = 0; // 한바퀴만 도는 인덱스 ... 
 		this.set = new String[4];
 	}
 
@@ -19,16 +19,20 @@ public class MySet {
 		if (getIndex(value) > -1) { //value 있다
 			return false;
 		} else if (this.index == this.set.length) {
-			String[] newSet = new String[this.set.length * 2];
-			for (int i = 0; i < this.set.length; i++) {
-				newSet[i] = this.set[i];
-			}
-			this.set = newSet;
+			doubleLength();
 		}
 		this.set[this.index] = value;
 		this.index++;
 		
 		return true;
+	}
+
+	public void doubleLength() {
+		String[] newSet = new String[this.set.length * 2];
+		for (int i = 0; i < this.set.length; i++) {
+			newSet[i] = this.set[i];
+		}
+		this.set = newSet;
 	}
 
 	
@@ -71,18 +75,21 @@ public class MySet {
 	
 	//어려워요 ... 
 	public boolean hasNext() {
-		if (this.nextIndex < this.index) {
-			return true;
+		//다음 요소가 있으면 true 없으면 false 반환
+		if (this.iterIndex == this.index) {
+			return false;
 		}
-		return false;
+		return true;
 	}
 	
 	public String next() {
+		//다음 요소가 없으면 NoSuchElementException
 		//반환값 : 다음 요소
-		String temp = this.set[this.nextIndex] ;
-		
-		this.nextIndex++;
-		return temp;
+		if (this.iterIndex == this.index) { //this.index까지 한바퀴 다 돌았다
+			throw new NoSuchElementException();
+		}
+		return this.set[this.iterIndex++]; //값 반환하고 인덱스 하나 올려줌
+				
 	}
 	
 	@Override

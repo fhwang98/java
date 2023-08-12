@@ -23,7 +23,6 @@ public class MyHashMap {
 		this.keys[this.index] = key;
 		this.values[this.index] = value;
 		this.index++;
-		 
 		return null;
 		
 	}
@@ -48,22 +47,74 @@ public class MyHashMap {
 		return -1;
 	}
 	
+	
 	public int size() {
 		return this.index;
 	}
 	
 	public String get(String key) {
 		if (indexOfKey(key) == -1) {
-			//map 없는 값 넣었을때 에러 없이 null 반환
+			//map 없는 값 넣었을때 null
 			return null;
 		}
 		return this.values[indexOfKey(key)];
 	}
 	
-//	public String remove(String key) {
-//		
-//	}
-//	
+	public String remove(String key) {
+		if (indexOfKey(key) == -1) {
+			return null;
+		}
+		//Left Shift
+		for (int i = indexOfKey(key); i < this.index - 1; i++) {
+			this.keys[i] = this.keys[i + 1];
+			this.values[i] = this.values[i + 1];
+		}
+		this.index--;
+		return null;
+	}
+	
+	public boolean containsKey(String key) {
+		if (indexOfKey(key) > -1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean containsValue(String value) {
+		if (indexOfValue(value) > -1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	private int indexOfValue(String value) {
+		for (int i = 0; i < this.index; i++) {
+			if (this.values[i].equals(value)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	public void clear() {
+		this.index = 0;
+	}
+	public void trimToSize() {
+		if (this.index == this.keys.length) {
+			return;
+		}
+		String[] newKeys = new String[this.index];
+		String[] newValues = new String[this.index];
+		for (int i = 0; i < this.index; i++) {
+			newKeys[i] = this.keys[i];
+			newValues[i] = this.values[i];
+		}
+		this.keys = newKeys;
+		this.values = newValues;
+		
+	}
 	
 	
 }

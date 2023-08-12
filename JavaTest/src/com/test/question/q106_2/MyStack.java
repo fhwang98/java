@@ -1,5 +1,7 @@
 package com.test.question.q106_2;
 
+import java.util.EmptyStackException;
+
 public class MyStack {
 	
 	private String[] stack;
@@ -13,11 +15,7 @@ public class MyStack {
 	public boolean push(String value) {
 		try {
 			if (this.index == this.stack.length) {
-				String[] newStack = new String[this.stack.length * 2];
-				for (int i = 0; i < this.index; i++) {
-					newStack[i] = this.stack[i];
-				}
-				this.stack = newStack;
+				doubleLength();
 			}
 			this.stack[this.index] = value;
 			this.index++;
@@ -29,10 +27,18 @@ public class MyStack {
 			return false;
 		}
 	}
+
+	public void doubleLength() {
+		String[] newStack = new String[this.stack.length * 2];
+		for (int i = 0; i < this.index; i++) {
+			newStack[i] = this.stack[i];
+		}
+		this.stack = newStack;
+	}
 	
 	public String pop() {
 		if (this.index == 0) {
-			throw new IndexOutOfBoundsException();
+			throw new EmptyStackException();
 		}
 		this.index--;
 		String lastIn = this.stack[this.index];
@@ -46,7 +52,7 @@ public class MyStack {
 	
 	public String peek() {
 		if (this.index == 0) {
-			throw new IndexOutOfBoundsException();
+			throw new EmptyStackException();
 		}
 		return this.stack[this.index - 1];
 	}

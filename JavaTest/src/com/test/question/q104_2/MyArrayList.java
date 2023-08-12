@@ -6,7 +6,7 @@ public class MyArrayList {
 
 	private String[] list;
 	
-	//1. 형재 요소를 대입할 방번호
+	//1. 현재 요소를 대입할 방번호
 	//2. 현재까지 대입된 요소의 개수
 	private int index;
 	

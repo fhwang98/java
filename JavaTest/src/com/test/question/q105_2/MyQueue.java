@@ -13,16 +13,11 @@ public class MyQueue {
 	public boolean add(String value) {
 		try {
 			if (this.index == this.queue.length) {
-				String[] newQueue = new String[this.queue.length * 2];
-				for (int i = 0; i < this.index; i++) {
-					newQueue[i] = this.queue[i];
-				}
-				this.queue = newQueue;
+				doubleLength();
 			}
 			this.queue[this.index] = value;
 			this.index++;
 			return true;
-			//try catch 결과적으로는 필요 없지만 만약 코드 설계가 잘못될 경우를 대비해서 try catch 감싸줌..
 			
 		} catch (Exception e) {
 			System.out.println("at MyQueue.add");
@@ -30,6 +25,14 @@ public class MyQueue {
 			return false;
 		}
 		
+	}
+
+	public void doubleLength() {
+		String[] newQueue = new String[this.queue.length * 2];
+		for (int i = 0; i < this.index; i++) {
+			newQueue[i] = this.queue[i];
+		}
+		this.queue = newQueue;
 	}
 	
 	public String poll() {

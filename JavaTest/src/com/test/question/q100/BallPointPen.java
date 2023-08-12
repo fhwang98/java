@@ -23,12 +23,32 @@ public class BallPointPen {
 	}
 
 	public void setColor(String color) {
-		if (color.equals("red") || color.equals("blue") || color.equals("green") || color.equals("black") ) {
+		if (color == null) {
+			this.color = null;
+		} else if (color.equals("red") || color.equals("blue") || color.equals("green") || color.equals("black") ) {
 			this.color = color;
 		}
+	}
+	
+	public BallPointPen() {
+		this(0.0, null);
+	}
+	
+	public BallPointPen(double thickness) {
+		this(thickness, null);
+	}
+	
+	public BallPointPen(String color) {
+		this(0.0, color);
+	}
+
+	public BallPointPen(double thickness, String color) {
+		this.setColor(color);
+		this.setThickness(thickness);
 	}
 
 	public String info() {
 		return String.format("%s색상 %.1fmm 볼펜", this.color, this.thickness);
 	}
 }
+ 

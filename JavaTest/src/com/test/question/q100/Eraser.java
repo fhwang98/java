@@ -9,11 +9,22 @@ public class Eraser {
 	}
 
 	public void setSize(String size) {
-		if (size.equals("Large") || size.equals("Medium") || size.equals("Small") ) {
+		if (size == null) {
+			this.size = null;
+		} else if (size.equals("Large") || size.equals("Medium") || size.equals("Small") ) {
 			this.size = size;
 		}
 	}
 	
+	
+	public Eraser() {
+		this(null);
+	}
+	
+	public Eraser(String size) {
+		this.setSize(size);
+	}
+
 	public String info() {
 		return String.format("%s사이즈 지우개", this.size);
 	}

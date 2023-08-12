@@ -77,7 +77,7 @@ public class Main {
 		list.add("홍길동");
 		System.out.println(list);
 		
-		System.out.println(list.get(1));
+		System.out.println(list.get(0));
 		
 		System.out.println(list.size());
 	}

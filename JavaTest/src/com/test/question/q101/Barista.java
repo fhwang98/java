@@ -6,19 +6,16 @@ public class Barista {
 	public Espresso makeEspresso(int bean) {
 		Espresso espresso = new Espresso(bean);
 		
-		Coffee.setBean(espresso.getBean());
-		Coffee.setBeanTotalPrice(espresso.getBean());
-		Coffee.setEspresso();
+		Coffee.countEspresso(espresso);
 		return espresso;		
 	}
+
 	
 	public Espresso[] makeEspressoes(int bean, int count) {
 		Espresso[] espressos = new Espresso[count];
 		for (int i = 0; i < count; i++) {
 			espressos[i] = new Espresso(bean);
-			Coffee.setBean(espressos[i].getBean());
-			Coffee.setBeanTotalPrice(espressos[i].getBean());
-			Coffee.setEspresso();
+			Coffee.countEspresso(espressos[i]);
 		}
 		return espressos; 
 	}
@@ -26,24 +23,18 @@ public class Barista {
 	public Latte makeLatte(int bean, int milk) {
 		Latte latte = new Latte(bean, milk);
 		
-		Coffee.setBean(latte.getBean());
-		Coffee.setBeanTotalPrice(latte.getBean());
-		Coffee.setMilk(latte.getMilk());
-		Coffee.setMilkTotalPrice(latte.getMilk());
-		Coffee.setLatte();
+		Coffee.countLatte(latte);
 		return latte;
 	}
+
+
 	
 	public Latte[] makeLattes(int bean, int milk, int count) {
 		Latte[] lattes = new Latte[count];
 		for (int i = 0; i < count; i++) {
 			lattes[i] = new Latte(bean, milk);
 			
-			Coffee.setBean(lattes[i].getBean());
-			Coffee.setBeanTotalPrice(lattes[i].getBean());
-			Coffee.setMilk(lattes[i].getMilk());
-			Coffee.setMilkTotalPrice(lattes[i].getMilk());
-			Coffee.setLatte();
+			Coffee.countLatte(lattes[i]);
 		}
 		return lattes;
 	}
@@ -51,29 +42,20 @@ public class Barista {
 	public Americano  makeAmericano(int bean, int water, int ice) {
 		Americano americano = new Americano(bean, water, ice);
 		
-		Coffee.setBean(americano.getBean());
-		Coffee.setBeanTotalPrice(americano.getBean());
-		Coffee.setWater(americano.getWater());
-		Coffee.setWaterTotalPrice(americano.getWater());
-		Coffee.setIce(americano.getIce());
-		Coffee.setIceTotalPrice(americano.getIce());
-		Coffee.setAmericano();
+		Coffee.countAmericano(americano);
 		return americano;
 		
 	}
+
+
+
 	
 	public Americano[] makeAmericanos(int bean, int water, int ice, int count) {
 		Americano[] americanos = new Americano[count];
 		for (int i = 0; i < count; i++) {
 			americanos[i] = new Americano(bean, water, ice);
 			
-			Coffee.setBean(americanos[i].getBean());
-			Coffee.setBeanTotalPrice(americanos[i].getBean());
-			Coffee.setWater(americanos[i].getWater());
-			Coffee.setWaterTotalPrice(americanos[i].getWater());
-			Coffee.setIce(americanos[i].getIce());
-			Coffee.setIceTotalPrice(americanos[i].getIce());
-			Coffee.setAmericano();
+			Coffee.countAmericano(americanos[i]);
 		}
 		return americanos;
 	}

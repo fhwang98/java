@@ -10,6 +10,7 @@ public class MyArrayList {
 	
 	public MyArrayList() {
 		this.index = 0;
+		this.list = new String[4];
 	}
 	
 	public boolean add(String value) {
@@ -19,12 +20,7 @@ public class MyArrayList {
 			//배열의 방이 남아있는지? > 있으면 ...
 			//					> 없으면... > 두배로 늘리기!
 			
-			if (this.index == 0) {
-			//if (this.list == null) {
-				
-				this.list = new String[4];
-				
-			} else if (this.index == this.list.length) {
+			if (this.index == this.list.length) {
 				//새로운 배열 생성
 				String[] newList = new String[this.list.length * 2];
 				//딥카피
@@ -48,7 +44,9 @@ public class MyArrayList {
 	}
 	
 	public String get(int index) {
-		
+		if (index < 0 || index >= this.index) {
+			throw new IndexOutOfBoundsException();
+		}
 		return this.list[index];
 		
 	}
@@ -59,6 +57,10 @@ public class MyArrayList {
 	
 	public String set(int index, String value) {
 		
+		if (index < 0 || index >= this.index) {
+			throw new IndexOutOfBoundsException();
+		}
+		
 		String beforeSet = this.list[index];
 		
 		this.list[index] = value;
@@ -67,6 +69,10 @@ public class MyArrayList {
 	}
 	
 	public String remove(int index) {
+		
+		if (index < 0 || index >= this.index) {
+			throw new IndexOutOfBoundsException();
+		}
 		
 		String beforeRemove = this.list[index];
 		
@@ -80,8 +86,13 @@ public class MyArrayList {
 	}
 	
 	public boolean add(int index, String value) {
+		
+		if (index < 0 || index >= this.index) {
+			throw new IndexOutOfBoundsException();
+		}
 	
 		try {
+			
 			for (int i = this.index - 1; i > index; i--) {
 				this.list[i] = this.list[i - 1];
 			}
@@ -110,7 +121,6 @@ public class MyArrayList {
 			}
 		}
 		return -1;
-		
 	}
 	
 	public int lastIndexOf(String value) {

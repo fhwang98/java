@@ -7,6 +7,7 @@ public class Main {
 		// 배열 생성
 		MyArrayList list = new MyArrayList();
 
+		
 		// 추가
 		System.out.println("add \"홍길동\", \"아무개\", \"하하하\" ");
 		list.add("홍길동");
@@ -80,7 +81,6 @@ public class Main {
 		// 초기화
 		list.clear();
 		System.out.println(list.size());
-		System.out.println(0 + list.get(0));
 		System.out.println();
 	}
 }

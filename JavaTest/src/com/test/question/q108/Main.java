@@ -8,52 +8,71 @@ public class Main {
 	public static void main(String[] args) {
 
 		//배열 생성
-		MySet list = new MySet();
-		HashSet set = new HashSet();
-
-//		Iterator<Integer> iter = set.iterator();
+		MySet myset = new MySet();
+		HashSet<String> set = new HashSet<String>();
 		
-		//System.out.println(iter.next());
-//		System.out.println(list.next());
-		
-		
+//		Iterator<String> iter = set.iterator();
+//		System.out.println(iter.next()); // NoSuchElementException
+//		System.out.println(iter.hasNext()); //false
 //		while (iter.hasNext()) {
 //			System.out.println(iter.next());
 //		}
 		
+		System.out.println(set.remove("홍길동")); //false
+		System.out.println(myset.remove("홍길동"));
 		
 		//추가
-		list.add("홍길동");
-		list.add("아무개");
-		list.add("하하하");
+		myset.add("홍길동");
+		myset.add("아무개");
+		myset.add("하하하");
+		myset.add("흠냐링");
+		myset.add("호호호");
+		myset.add("헤헤헤");
 		
 		set.add("홍길동");
 		set.add("아무개");
 		set.add("하하하");
+		set.add("흠냐링");
+		set.add("호호호");
+		set.add("헤헤헤");
 		
+		System.out.println(myset);
+		System.out.println("set: "+set+" size:"+set.size());
 		
-
 		//개수
-		System.out.println("MySet: "+list.size());
+		System.out.println("MySet: "+myset.size());
 		System.out.println("Set: "+set.size());
-
 		
 		//삭제
-		list.remove("아무개");
+		myset.remove("아무개");
+		set.remove("아무개");
 
 		//개수
-		System.out.println(list.size());
-		System.out.println(list);
+		System.out.println(myset);
+		System.out.println("set: "+set+" size:"+set.size());
 
+
+		
+		Iterator<String> iter = set.iterator();
+		while (iter.hasNext()) {
+			System.out.println(iter.next());
+		}
+		//System.out.println(iter.next()); //NoSuchElementException
+		System.out.println(set.size());
+		
 		//탐색 + 읽기
-//		while (list.hasNext()) {
-//		      System.out.println(list.next());
-//		}
-		System.out.println(list.size());
+		while (myset.hasNext()) {
+			System.out.println(myset.next());
+		}
+		//System.out.println(myset.next());
+		System.out.println(myset.size());
+		
+		
 
 		//초기화
-		list.clear();
-		System.out.println(list.size());
+		System.out.println("clear myset");
+		myset.clear();
+		System.out.println("size: "+myset.size());
 		
 	}
 

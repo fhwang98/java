@@ -18,10 +18,17 @@ public class Packer {
 		0 > 전부, 1 > 연필, 2 > 지우개, 3 > 볼펜, 4 > 자
 	 */
 
-	private static int pencilCount = 0;
-	private static int eraserCount = 0;
-	private static int ballPointPenCount = 0;
-	private static int rulerCount = 0;
+	private static int pencilCount;
+	private static int eraserCount;
+	private static int ballPointPenCount;
+	private static int rulerCount;
+	
+	public Packer() {
+		this.pencilCount = 0;
+		this.eraserCount = 0;
+		this.ballPointPenCount = 0;
+		this.rulerCount = 0;
+	}
 	
 	
 	public void packing(Pencil pencil) {
@@ -37,7 +44,7 @@ public class Packer {
 	}
 	
 	public void packing(BallPointPen ballPointPen) {
-		System.out.printf("포장 전 검수: %s입니다.\n", ballPointPen.info());
+		System.out.printf("포장 전  검수: %s입니다.\n", ballPointPen.info());
 		System.out.println("포장을 완료했습니다.");
 		Packer.ballPointPenCount++;
 	}
